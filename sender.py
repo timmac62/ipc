@@ -1,22 +1,22 @@
 #! /usr/bin/python3
 # sender.py
-# the sender
+# Usage: ./sender.py -h
 import time
 import argparse
 
 # Set up the argument parser for writing to the path of the named pipe (FIFO)
 parser = argparse.ArgumentParser(
     prog='sender',
-    description='send message to the receiver named pipe',
+    description='send message to the specified named pipe/fifo',
     epilog="Thanks for using %(prog)s! :)",
 )
 
-# Add an argument to specify the pipe path and pmessage
+# Add an argument to specify the pipe path and the message
 general = parser.add_argument_group("general output")
 general.add_argument('fifotowrite',
             type=str,
             default='/tmp/my_fifo',
-            help='The Named Pipe to write to')
+            help='The Named Pipe/FIFO to write to')
 general.add_argument('opt_message_to_send',
             type=str, nargs='?',
             default='Namaste from sender',
@@ -35,6 +35,7 @@ pipe_path = args.fifotowrite
 message = args.opt_message_to_send
 number_of_sends=args.opt_number_sends
 
+# for debugging purposes
 # print(args)
 # print(f'pipe: {pipe_path}, message: {message}, number of times: {number_of_sends}')
 
