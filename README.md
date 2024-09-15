@@ -11,11 +11,11 @@ Just need python installed and run these scripts from the linux command line
 
 ## Usage example
 
-A few motivating and useful examples of how your product can be used. Spice this up with code blocks and potentially more screenshots.
+These examples will require 2 terminal windows to be open: one for the sender and another for the receiver
 
 Terminal 1:
 ```sh
-python receiver.py
+python receiver.py # default fifo is /tmp/my_fifo
 ```
 Terminal 2:
 ```sh
